@@ -1,0 +1,41 @@
+			<div class='header'>
+				<h1>Dialog box</h1>
+				<a href='php/logout.php' class='button btn-deconnexion'>Déconnexion</a>
+			</div>
+			<div class='container'>
+				<div class='content'>
+					<div class='profil'>
+						<h3><?php echo $utilisateur[0]['prenom']." ".$utilisateur[0]['nom']; ?></h3>
+						<p>Syteme d'exploitation: <?php echo $_SESSION['systeme']; ?></p>
+						<p>Navigateur Web: <?php echo $_SESSION['navigateur']; ?></p>
+						<p>Adresse Ip: <?php echo $_SESSION['ip']; ?></p>
+						<p>Adresse mail: <?php echo $utilisateur[0]['mail']; ?></p>
+						<p><?php if($utilisateur[0]['nombre_message']>1) echo $utilisateur[0]['nombre_message']." mesages"; else echo $utilisateur[0]['nombre_message']." message"; ?> </p>
+					</div>
+					<div class='shoutbox'></div>
+					<div>
+						   <a href="flux.xml" target="_blank">
+								 <img src="source/rss.png" alt="Flux RSS" border="0" />
+								 Flux RSS News
+						   </a>
+					</div>
+				</div>
+				<div class='content'>
+					<div class='window-box'>
+						<h2 class='h2-box'>Boîte de dialogue</h2>
+						<div class='content-box'>
+							<form method='post' action='php/message.php'>
+                                                                <div id="overview"></div>
+								<textarea class='textarea-box' name='message'></textarea>
+								<input type='submit' value='Envoyer' class='button btn-box' />
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script src='js/load.js'></script>
+            <script src='js/emoticons.js' ></script>
+            <script src='js/emotic.js' ></script>
+			<script src='js/fenetre.js' ></script>
+			
+			

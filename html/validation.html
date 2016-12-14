@@ -1,0 +1,42 @@
+			<div class='header'>
+				<a class='home-link' href='index.php'><h1>Dialog box</h1></a>
+				<a href='connexion.php' class='button btn-connexion'>Connexion</a>
+			</div>
+			<div class='container'>
+				<div class='content'>
+					<?php
+	                                        include 'php/db.php';
+
+
+	                                        $db = new db();
+	                                        $mysqli = $db->connect();
+
+						if(isset($_GET['mess']) ){
+
+							$resultat = $db->query($mysqli,"SELECT * FROM creation");
+
+							if($resultat != NULL){
+                                                                foreach($resultat as $var){
+
+									if($var['lien'] == $_GET['mess']){
+										echo "
+					<p>Compte activé</p>";
+                                                                                $db->update($mysqli,"UPDATE creation SET actif=1 WHERE lien='".$var['lien']."'");
+									}
+                                                                }
+
+							}
+						        else{
+							        header('location: index.php');
+						        }
+
+						}
+						else{
+							header('location: index.php');
+						}
+					?>
+
+				</div>
+
+			</div>
+

@@ -1,0 +1,36 @@
+			<div class='header'>
+				<a class='home-link' href='index.php'><h1>Dialog box</h1></a>
+				<a href='connexion.php' class='button btn-connexion'>Connexion</a>
+			</div>
+			<div class='container'>
+				<div class='content'>
+					<table>
+						<tr>
+							<td>
+                                                                <p><?php echo calendrier(); ?></p>
+								<canvas id='canvas'></canvas>
+
+							</td>
+							<td>
+								<h3>Inscription</h3>
+								<form method='post' action='php/inscription.php'>
+									<label for='nom'>Nom</label><input class='input-box' type='text' id='nom' name='nom' />
+									<label for='prenom'>Prénom</label><input class='input-box' type='text' id='prenom' name='prenom' />
+									<label for='email'>Email</label><input class='input-box' type='text' id='email' name='email' />
+									<label for='password'>Mot de passe</label><input class='input-box' type='password' id='password' name='password' />
+									<img id="captcha" src="securimage/securimage_show.php" alt="CAPTCHA Image" />
+
+									<a class='link-captcha' href="#" onclick="document.getElementById('captcha').src = 'securimage/securimage_show.php?' + Math.random(); return false">Changer d'image</a>
+
+									<label for='captcha_code'>Captcha</label><input type="text" id='captcha_code' class='input-box' name="captcha_code" />
+
+									<input type='submit' value='Inscription' class='button btn-inscription' />
+									<?php echo $mes;?>
+								</form>
+							</td>
+						<tr>
+					</table>
+
+				</div>
+			</div>
+                        <script src='js/canvas.js'></script>
