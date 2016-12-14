@@ -2,10 +2,10 @@
 
 class db{
 
-	var $server ="localhost";// server (ex:localhost)
-	var $user = "root";//user to connect (ex: root)
+	var $server ="";// server (ex:localhost)
+	var $user = "";//user to connect (ex: root)
 	var $pass = "";// password to connect
-	var $db = "db_facebox";//name of database
+	var $db = "";//name of database
 
 	function connect(){
 		if($mysqli = mysqli_connect($this->server,$this->user,$this->pass,$this->db))
