@@ -1,6 +1,6 @@
 # Blog
-##Description
+## Description
 Mini blog utilisant PHP et JQuery
-##Aperçu
+## Aperçu
 !['page d'accueil'](Capture.PNG)
 >Benjamin
